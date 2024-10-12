@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        #calaverita {
+            display: none;
+            margin-top: 20px;
+            width: 100px;
+            animation: bailar 2s infinite;
+        }
+
+        @keyframes bailar {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola dulce, ¿me perdonas si o no?</h1>
+
+    <div class="button-container">
+        <button class="button" onclick="perdonar()">Sí</button>
+        <button class="button" onclick="perdonar()">Sí</button>
+    </div>
+
+    <img id="calaverita" src="https://i.imgur.com/3PBDqXR.png" alt="Calaverita bailando">
+
+    <!-- Script para lanzar confeti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        function lanzarConfeti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        function perdonar() {
+            lanzarConfeti();
+            document.getElementById("calaverita").style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
